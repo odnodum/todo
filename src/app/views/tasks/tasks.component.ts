@@ -31,6 +31,11 @@ export class TasksComponent implements OnInit {
   }
 
   public getPriorityColor(task: Task) {
+
+    if (task.completed) {
+      return '#f8f9fa'
+    }
+
     if (task.priority && task.priority.color) {
       return task.priority.color;
     }

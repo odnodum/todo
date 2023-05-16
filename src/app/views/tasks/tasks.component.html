@@ -8,15 +8,15 @@
       <!--  цвет приоритета  -->
       <ng-container matColumnDef="color">
         <th *matHeaderCellDef mat-header-cell></th>
-        <td *matCellDef="let task" [style.background-color]="getPriorityColor(task)"
+        <td class="col-color" *matCellDef="let task" [style.background-color]="getPriorityColor(task)"
             mat-cell></td>
       </ng-container>
 
 
       <!-- нумерация-->
       <ng-container matColumnDef="id">
-        <th *matHeaderCellDef mat-header-cell></th>
-        <td *matCellDef="let index = index;" mat-cell>
+        <th *matHeaderCellDef mat-header-cell>#</th>
+        <td class="col-id" *matCellDef="let index = index;" mat-cell>
 
           {{index + 1}}
 
@@ -27,7 +27,7 @@
       <!-- название задачи-->
       <ng-container matColumnDef="title">
         <th *matHeaderCellDef mat-header-cell> Название</th>
-        <td *matCellDef="let task" [class.completed]="task.completed" mat-cell>
+        <td class="col-title" *matCellDef="let task" [class.completed]="task.completed" mat-cell>
 
           {{task.title}}
 
@@ -37,7 +37,7 @@
       <!--дата выполнения-->
       <ng-container matColumnDef="date">
         <th *matHeaderCellDef mat-header-cell> Срок</th>
-        <td *matCellDef="let task" [ngClass]="{'completed': task.completed, 'nodate': task.date == null}"
+        <td class="col-date" *matCellDef="let task" [ngClass]="{'completed': task.completed, 'nodate': task.date == null}"
             mat-cell>
 
           {{task.date | date: "short"}}
@@ -48,7 +48,7 @@
       <!--приоритет-->
       <ng-container matColumnDef="priority">
         <th *matHeaderCellDef mat-header-cell> Приоритет</th>
-        <td *matCellDef="let task"
+        <td class="col-priority" *matCellDef="let task"
             [ngClass]="{'completed': task.completed, 'nopriority': task.priority == null}"
             mat-cell
         >
@@ -62,7 +62,7 @@
       <!--категория-->
       <ng-container matColumnDef="category">
         <th *matHeaderCellDef mat-header-cell> Категория</th>
-        <td *matCellDef="let task"
+        <td class="col-category" *matCellDef="let task"
             [ngClass]="{'completed': task.completed, 'nocategory': task.category == null, 'link': !task.completed && task.category}"
             mat-cell
         >
