@@ -8,10 +8,10 @@ export interface CommonDAO<T> {
 
   get(id: number): Observable<Category> | undefined;
 
-  update(T): Observable<Category> | undefined;
+  update(arg0: T): Observable<Category> | undefined;
 
   delete(id: number): Observable<Category> | undefined;
 
-  add(T): Observable<Category> | undefined;
+  add(arg0: T): Observable<Category> | undefined;
 
 }
