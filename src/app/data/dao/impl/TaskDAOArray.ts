@@ -9,7 +9,6 @@ export class TaskDAOArray implements TaskDAO {
     return undefined;
   }
 
-
   delete(id: number): Observable<Task> | undefined {
     return undefined;
   }
